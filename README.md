@@ -1,2 +1,2 @@
 # scrappy-bird
- gmtk project!!
+ gmtk submission!!
