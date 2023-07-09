@@ -56,11 +56,6 @@ public class Birb : MonoBehaviour
         {
             this.myRigidbody.velocity = Vector2.zero;
             this.myRigidbody.AddForce(10*Vector2.up, ForceMode2D.Impulse);
-            Debug.Log("jump!");            
-        }
-        else
-        {
-            Debug.Log("jump missed");
         }
 
         float randomTime = 0.3f + Random.Range(0, 0.4f);
@@ -70,7 +65,7 @@ public class Birb : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("test");
+        Debug.Log("DIE");
         // set animator isDead to true; stop flapping
         // stop moving carpet
     }

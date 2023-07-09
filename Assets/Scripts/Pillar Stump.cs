@@ -4,19 +4,6 @@ using UnityEngine;
 
 public class PillarStump : MonoBehaviour
 {
-    /*
-    when clicked, 
-        disappear
-        change collider to trigger (which, if triggered, increments score)
-        changes the sprites of the dudahs above & below
-
-    change sprites of above & below
-
-    Pillar.cs stores a reference to a list containing all four
-    Each PillarStump stores a serialize field value of their number in stack
-        gets a reference to pillar
-        calls public pillar method, and passes in its num as param
-    */
     SpriteRenderer myRenderer;
     BoxCollider2D myCollider;
     Pillar myPillar;
@@ -30,7 +17,10 @@ public class PillarStump : MonoBehaviour
 
     void OnMouseOver()
     {
-        this.myRenderer.color = new Color(1.0f, 1.0f, 1.0f, 0.6f);
+        if (!this.myPillar.GetIsClicked())
+        {
+            this.myRenderer.color = new Color(1.0f, 1.0f, 1.0f, 0.6f);
+        }
     }
 
     void OnMouseExit()
@@ -40,22 +30,17 @@ public class PillarStump : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!this.myCollider.isTrigger)
+        if (!this.myPillar.GetIsClicked())
         {
             this.myRenderer.sprite = null;
             this.myCollider.isTrigger = true;
             this.myPillar.ChangeSpritesAt(this.myNum);
-            Debug.Log("clicks left: -1");
+            this.myPillar.Click();
         }
     }
 
     public void ChangeSpriteTo(Sprite sprite)
     {
-        if (this.myRenderer.sprite != null)
-        {
-            this.myRenderer.sprite = sprite;
-        }
-
+        this.myRenderer.sprite = sprite;
     }
-
 }

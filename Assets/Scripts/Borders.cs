@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Borders : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         transform.position = transform.position + new Vector3(-0.01f, 0, 0);
