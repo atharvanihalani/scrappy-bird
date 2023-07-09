@@ -74,4 +74,9 @@ public class Birb : MonoBehaviour
         // set animator isDead to true; stop flapping
         // stop moving carpet
     }
+
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        Debug.Log("increase score");
+    }
 }

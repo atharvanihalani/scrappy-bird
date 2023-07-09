@@ -1,0 +1,6 @@
+TODO
+- birb tilt w velocity
+
+
+platform constantly scrolls to the left
+after it hits a certain point, it resets position
