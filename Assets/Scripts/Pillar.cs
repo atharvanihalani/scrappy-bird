@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Pillar : MonoBehaviour
 {
     [SerializeField] PillarStump[] myBabies;
@@ -50,4 +51,6 @@ public class Pillar : MonoBehaviour
                 break;
         }
     }
+
+
 }

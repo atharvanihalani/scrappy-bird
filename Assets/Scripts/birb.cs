@@ -7,10 +7,8 @@ public class Birb : MonoBehaviour
 {
     /*
     updates rotation based on current velocity
-
     3: 30
     -9: -150
-    if 
     */
 
     Rigidbody2D myRigidbody;
@@ -36,17 +34,6 @@ public class Birb : MonoBehaviour
         }
     }
 
-    void OnMove(InputValue value)
-    {
-        Vector2 move = value.Get<Vector2>();
-        if (move.y == 1 && move.x == 0)
-        {
-            this.myRigidbody.velocity = Vector2.zero;
-            this.myRigidbody.AddForce(10*Vector2.up, ForceMode2D.Impulse);
-            Debug.Log("jump!");
-        }
-    }
-
     void MaybeJump()
     {
         // max height: 2.7; min height: -3.2
@@ -68,10 +55,5 @@ public class Birb : MonoBehaviour
         Debug.Log("DIE");
         // set animator isDead to true; stop flapping
         // stop moving carpet
-    }
-
-    void OnTriggerEnter2D(Collider2D other) 
-    {
-        Debug.Log("increase score");
     }
 }
