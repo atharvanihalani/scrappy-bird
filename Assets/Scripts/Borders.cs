@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class Borders : MonoBehaviour
 {
+    bool isDead = false;
     void Update()
     {
-        transform.position = transform.position + new Vector3(-0.01f, 0, 0);
-        if (transform.position.x <= -16)
+        if (!isDead)
         {
-            transform.position = Vector3.zero;
+            transform.position = transform.position + new Vector3(-0.06f, 0, 0);
+            if (transform.position.x <= -16)
+            {
+                transform.position = Vector3.zero;
+            }
         }
+    }
+
+    public void RipBirb()
+    {
+        this.isDead = true;
     }
 }

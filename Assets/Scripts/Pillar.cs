@@ -9,12 +9,13 @@ public class Pillar : MonoBehaviour
     [SerializeField] Sprite pillarUp;
     [SerializeField] Sprite pillarDown;
     bool isClicked = false;
+    bool isDead = false;
 
     void Update()
     {
-        if (transform.position.y >= -5)
+        if (transform.position.y >= -5 && !this.isDead)
         {
-            transform.position = transform.position + new Vector3(-0.01f, 0, 0);
+            transform.position = transform.position + new Vector3(-0.06f, 0, 0);
             if (transform.position.x <= -5)
             {
                 Destroy(gameObject);
@@ -52,5 +53,9 @@ public class Pillar : MonoBehaviour
         }
     }
 
+    public void RipBirb()
+    {
+        this.isDead = true;
+    }
 
 }

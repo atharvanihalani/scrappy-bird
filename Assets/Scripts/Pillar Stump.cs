@@ -11,11 +11,17 @@ public class PillarStump : MonoBehaviour
     SpriteRenderer myRenderer;
     BoxCollider2D myCollider;
     Pillar myPillar;
+    Spikes spikes;
     void Awake()
     {
         this.myRenderer = GetComponent<SpriteRenderer>();
         this.myCollider = GetComponent<BoxCollider2D>();
         this.myPillar = GetComponentInParent<Pillar>();
+        this.spikes = GetComponentInChildren<Spikes>();
+        if (spikes == null)
+        {
+            Debug.Log("OOP lawl");
+        }
     }
 
     void OnMouseOver()
@@ -39,6 +45,8 @@ public class PillarStump : MonoBehaviour
             this.myCollider.isTrigger = true;
             this.myPillar.ChangeSpritesAt(this.myNum);
             this.myPillar.Click();
+
+            this.spikes.GetComponent<Collider2D>().enabled = false;
         }
     }
 

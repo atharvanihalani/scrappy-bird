@@ -1,10 +1,12 @@
 TODO
+DEAD
+    make bird transparent
+    white flash?
+    restart button
 - make gameplay less hellish (only 3 modules??)
-- actually make the bird die lmao (AND add a restart button)
 - UI stuff – "tap to start", "tutorial", etc
-- sounds??
-- birb tilt w velocity?
-- try freezing birb x val??
+
+
 
 
 
